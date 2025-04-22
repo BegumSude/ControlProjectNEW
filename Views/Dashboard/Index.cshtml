@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<html>
+<body>
+
+<div class="row">
+    <!--Öğretmenlerin Başarı Oranları-->
+    <div class="col-5 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Doughnut chart</h4>
+                <canvas id="doughnutChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Öğrencilerin Genel Sıralaması-->
+    <div class="col-7 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"> Başarı Sıralaması</h4>
+                <p class="card-description">
+
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sıralama
+                                </th>
+                                <th>
+                                    Öğrenci
+                                </th>
+                                <th>
+                                    İlerleme Durumu
+                                </th>
+                                <th>
+                                    Eğitmen
+                                </th>
+
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td class="py-1">
+                                    1.
+                                </td>
+                                <td>
+                                    <img class="py-0" src="~/Templates/Admin/template/images/faces/face5.jpg" alt="image" style="margin-right: 8px;" />
+                                    Belinay Dinlemez
+
+                                </td>
+                                <td style="text-align: center;">
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">%95</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    Erhan Hoca
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
