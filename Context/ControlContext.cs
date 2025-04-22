@@ -11,9 +11,10 @@ namespace ControlProject.Context
     {
 
         public DbSet<Student> Students { get; set; }
-        public DbSet<Team> Teams { get; set; }
-        public DbSet<Trainer> Trainers { get; set; }
+        public DbSet<StudentProject> StudentProjects { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Project> Projects { get; set; }
-   
+
+
     }
 }

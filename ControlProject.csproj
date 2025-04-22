@@ -133,14 +133,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Entities\Project.cs" />
     <Compile Include="Entities\Student.cs" />
-    <Compile Include="Entities\Team.cs" />
-    <Compile Include="Entities\Trainer.cs" />
+    <Compile Include="Entities\StudentProject.cs" />
+    <Compile Include="Entities\Teacher.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202504211625240_InitialCreate.cs" />
-    <Compile Include="Migrations\202504211625240_InitialCreate.Designer.cs">
-      <DependentUpon>202504211625240_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202504221034172_InitialCreate.cs" />
+    <Compile Include="Migrations\202504221034172_InitialCreate.Designer.cs">
+      <DependentUpon>202504221034172_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1999,8 +1999,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202504211625240_InitialCreate.resx">
-      <DependentUpon>202504211625240_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202504221034172_InitialCreate.resx">
+      <DependentUpon>202504221034172_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
