@@ -10,10 +10,10 @@ namespace ControlProject.Entities
         public int StudentId { get; set; }
         public int TeacherId { get; set; }
         public string Name { get; set; }
-        public virtual Teacher Teacher { get; set; }
-        public List<StudentProject> StudentProjects { get; set; }
+        public virtual Teacher Teacher { get; set; } // Navigation Property
+        public virtual ICollection<StudentProject> StudentProjects { get; set; }
 
-        public List<Project> Projects { get; set; }
+
 
     }
 }

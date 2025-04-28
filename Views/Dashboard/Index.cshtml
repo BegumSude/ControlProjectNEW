@@ -4,22 +4,25 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 <html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
 <body>
-
+    
 <div class="row">
     <!--Öğretmenlerin Başarı Oranları-->
-    <div class="col-5 grid-margin stretch-card">
+    <div class="col-5 grid-margin ">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Doughnut chart</h4>
-                <canvas id="doughnutChart"></canvas>
+                <h4 class="card-title">Doughnut Chart</h4>
+                <canvas id="doughnutChart" style="height:300px; width:300px;"></canvas>
             </div>
         </div>
     </div>
 
 
     <!--Öğrencilerin Genel Sıralaması-->
-    <div class="col-7 grid-margin stretch-card">
+    <div class="col-7 grid-margin ">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title"> Başarı Sıralaması</h4>
@@ -71,13 +74,54 @@
 
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                </div>       
+                  </div>       
+                  </div>       
+                  </div>       
+
 
 
 
 </body>
 </html>
+
+
+<!--Doughnut chart js-->
+<script>
+    var ctx = document.getElementById('doughnutChart').getContext('2d');
+    var doughnutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Münevver Hoca', 'Murat Hoca', 'Buse Nur Hoca','Erhan Hoca', 'Abdullah Hoca', 'Fatih Hoca'],
+            datasets: [{
+                labels: ['Pink', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                data: [15, 20, 10, 25, 20, 10],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)',
+                    'rgba(255, 159, 64, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)',
+                    'rgba(255, 159, 64, 0.5)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            },
+          
+        }
+    });
+</script>
