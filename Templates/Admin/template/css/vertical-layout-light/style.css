@@ -14960,7 +14960,7 @@ button.bg-info:focus,
 }
 
 .bg-warning, .settings-panel .color-tiles .tiles.warning {
-  background-color: #ff8300 !important;
+    background-color: #ffd1dc !important;
 }
 
 a.bg-warning:hover, .settings-panel .color-tiles a.tiles.warning:hover, a.bg-warning:focus, .settings-panel .color-tiles a.tiles.warning:focus,
@@ -15005,6 +15005,97 @@ button.bg-dark:hover,
 button.bg-dark:focus,
 .settings-panel .color-tiles button.tiles.dark:focus {
   background-color: black !important;
+}
+/* Pastel Pembe */
+.bg-pastel-pink, .settings-panel .color-tiles .tiles.pastel-pink {
+    background-color:  !important;
+}
+
+a.bg-pastel-pink:hover, .settings-panel .color-tiles a.tiles.pastel-pink:hover, a.bg-pastel-pink:focus, .settings-panel .color-tiles a.tiles.pastel-pink:focus,
+button.bg-pastel-pink:hover,
+.settings-panel .color-tiles button.tiles.pastel-pink:hover,
+button.bg-pastel-pink:focus,
+.settings-panel .color-tiles button.tiles.pastel-pink:focus {
+    background-color: #fbb6c1 !important;
+}
+
+/* Pastel Mavi */
+.bg-pastel-blue, .settings-panel .color-tiles .tiles.pastel-blue {
+    background-color: #a7c7e7 !important;
+}
+
+a.bg-pastel-blue:hover, .settings-panel .color-tiles a.tiles.pastel-blue:hover, a.bg-pastel-blue:focus, .settings-panel .color-tiles a.tiles.pastel-blue:focus,
+button.bg-pastel-blue:hover,
+.settings-panel .color-tiles button.tiles.pastel-blue:hover,
+button.bg-pastel-blue:focus,
+.settings-panel .color-tiles button.tiles.pastel-blue:focus {
+    background-color: #8bb3e0 !important;
+}
+
+/* Pastel Yeþil */
+.bg-pastel-green, .settings-panel .color-tiles .tiles.pastel-green {
+    background-color: #b8e0d2 !important;
+}
+
+a.bg-pastel-green:hover, .settings-panel .color-tiles a.tiles.pastel-green:hover, a.bg-pastel-green:focus, .settings-panel .color-tiles a.tiles.pastel-green:focus,
+button.bg-pastel-green:hover,
+.settings-panel .color-tiles button.tiles.pastel-green:hover,
+button.bg-pastel-green:focus,
+.settings-panel .color-tiles button.tiles.pastel-green:focus {
+    background-color: #99d4be !important;
+}
+
+/* Pastel Sarý */
+.bg-pastel-yellow, .settings-panel .color-tiles .tiles.pastel-yellow {
+    background-color: #fff5ba !important;
+}
+
+a.bg-pastel-yellow:hover, .settings-panel .color-tiles a.tiles.pastel-yellow:hover, a.bg-pastel-yellow:focus, .settings-panel .color-tiles a.tiles.pastel-yellow:focus,
+button.bg-pastel-yellow:hover,
+.settings-panel .color-tiles button.tiles.pastel-yellow:hover,
+button.bg-pastel-yellow:focus,
+.settings-panel .color-tiles button.tiles.pastel-yellow:focus {
+    background-color: #ffe78c !important;
+}
+
+/* Pastel Mor */
+.bg-pastel-purple, .settings-panel .color-tiles .tiles.pastel-purple {
+    background-color: #d7bde2 !important;
+}
+
+a.bg-pastel-purple:hover, .settings-panel .color-tiles a.tiles.pastel-purple:hover, a.bg-pastel-purple:focus, .settings-panel .color-tiles a.tiles.pastel-purple:focus,
+button.bg-pastel-purple:hover,
+.settings-panel .color-tiles button.tiles.pastel-purple:hover,
+button.bg-pastel-purple:focus,
+.settings-panel .color-tiles button.tiles.pastel-purple:focus {
+    background-color: #c39bd3 !important;
+}
+.navbar-pastel-pink {
+    background-color: #f8c8dc !important;
+}
+
+.navbar-pastel-blue {
+    background-color: #a8d0e6 !important;
+}
+
+.navbar-pastel-green {
+    background-color: #b8e994 !important;
+}
+
+.navbar-pastel-yellow {
+    background-color: #ffeaa7 !important;
+}
+
+.navbar-pastel-purple {
+    background-color: #d6a2e8 !important;
+}
+
+.tiles {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    display: inline-block;
 }
 
 .bg-white {
@@ -19210,6 +19301,9 @@ code {
     height: 200px;
   }
 }
+.chartjs-legend, .chart-legend, .custom-legend, #projectProgressChart + ul {
+    display: none !important;
+}
 
 .chartjs-legend ul {
   margin-bottom: 0;
@@ -20256,20 +20350,20 @@ code {
 }
 
 .form-check .form-check-label input[type="checkbox"] + .input-helper:before {
-  content: "";
-  width: 18px;
-  height: 18px;
-  border-radius: 2px;
-  border: solid #f2125e;
-  border-width: 2px;
-  -webkit-transition: all;
-  -moz-transition: all;
-  -ms-transition: all;
-  -o-transition: all;
-  transition: all;
-  transition-duration: 0s;
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    border: solid #2b80ff;
+    border-width: 2px;
+    -webkit-transition: all;
+    -moz-transition: all;
+    -ms-transition: all;
+    -o-transition: all;
+    transition: all;
+    transition-duration: 0s;
+    -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
 }
 
 .form-check .form-check-label input[type="checkbox"] + .input-helper:after {
@@ -20296,8 +20390,8 @@ code {
 }
 
 .form-check .form-check-label input[type="checkbox"]:checked + .input-helper:before {
-  background: #f2125e;
-  border-width: 0;
+    background: #2b80ff;
+    border-width: 0;
 }
 
 .form-check .form-check-label input[type="checkbox"]:checked + .input-helper:after {
@@ -24057,7 +24151,7 @@ body.avgrund-active {
 }
 
 .navbar.navbar-warning .navbar-menu-wrapper {
-  background: #ff8300;
+    background: #ffd1dc;
 }
 
 .navbar.navbar-warning:not(.navbar-light) .navbar-menu-wrapper .navbar-toggler {
@@ -24631,10 +24725,11 @@ body.avgrund-active {
   justify-content: center;
 }
 
-.settings-panel .nav-tabs .nav-item .nav-link.active {
-  background: transparent;
-  color: #f2125e;
-}
+    .settings-panel .nav-tabs .nav-item .nav-link.active {
+        background: transparent;
+        color: #2b80ff;
+        
+    }
 
 .settings-panel .tab-content {
   border: none;
@@ -24892,37 +24987,39 @@ body.avgrund-active {
 }
 
 #settings-trigger {
-  position: fixed;
-  bottom: 40px;
-  right: 30px;
-  height: 45px;
-  width: 45px;
-  background: #f2125e;
-  z-index: 99;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  border-radius: 100%;
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  -ms-animation-duration: 1s;
-  -o-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  -ms-animation-delay: 1s;
-  -o-animation-delay: 1s;
-  animation-delay: 1s;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
-  animation-fill-mode: both;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    height: 45px;
+    width: 45px;
+    background: #2b80ff;
+    z-index: 99;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border-radius: 100%;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -ms-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
-
+.legend-box {
+    display: none !important;
+}
 #settings-trigger i {
   color: #ffffff;
   font-size: 1rem;

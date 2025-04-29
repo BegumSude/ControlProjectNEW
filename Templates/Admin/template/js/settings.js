@@ -14,7 +14,7 @@
 
 
     //background constants
-    var navbar_classes = "navbar-danger navbar-success navbar-warning navbar-dark navbar-light navbar-primary navbar-info navbar-pink";
+      var navbar_classes = "navbar-danger navbar-success navbar-warning navbar-dark navbar-primary navbar-info navbar-pink navbar-pastel-pink navbar-pastel-blue navbar-pastel-green navbar-pastel-yellow navbar-pastel-purple";
     var sidebar_classes = "sidebar-light sidebar-dark";
     var $body = $("body");
 
@@ -81,5 +81,45 @@
       $(".tiles").removeClass("selected");
       $(this).addClass("selected");
     });
+      // Pastel Pink
+      $(".tiles.pastel-pink").on("click", function () {
+          $(".navbar").removeClass(navbar_classes);
+          $(".navbar").addClass("navbar-pastel-pink");
+          $(".tiles").removeClass("selected");
+          $(this).addClass("selected");
+      });
+
+      // Pastel Blue
+      $(".tiles.pastel-blue").on("click", function () {
+          $(".navbar").removeClass(navbar_classes);
+          $(".navbar").addClass("navbar-pastel-blue");
+          $(".tiles").removeClass("selected");
+          $(this).addClass("selected");
+      });
+
+      // Pastel Green
+      $(".tiles.pastel-green").on("click", function () {
+          $(".navbar").removeClass(navbar_classes);
+          $(".navbar").addClass("navbar-pastel-green");
+          $(".tiles").removeClass("selected");
+          $(this).addClass("selected");
+      });
+
+      // Pastel Yellow
+      $(".tiles.pastel-yellow").on("click", function () {
+          $(".navbar").removeClass(navbar_classes);
+          $(".navbar").addClass("navbar-pastel-yellow");
+          $(".tiles").removeClass("selected");
+          $(this).addClass("selected");
+      });
+
+      // Pastel Purple
+      $(".tiles.pastel-purple").on("click", function () {
+          $(".navbar").removeClass(navbar_classes);
+          $(".navbar").addClass("navbar-pastel-purple");
+          $(".tiles").removeClass("selected");
+          $(this).addClass("selected");
+      });
+
   });
 })(jQuery);
