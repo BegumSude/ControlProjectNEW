@@ -1,0 +1,52 @@
+﻿<!-- GRAFİK KUTUSU -->
+@* Proje Tamamlama Grafiği *@
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <!-- Sol taraf: Donut grafik -->
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <div style="position: relative; width: 150px; height: 150px;">
+                    <canvas id="projectProgressChart" width="150" height="150"></canvas>
+                   
+                    <div style="
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-weight: bold;
+                        font-size: 18px;
+                        color: #2A2A2A;">
+                        @ViewBag.CompletedPercentage%
+                    </div>
+                </div>
+            </div>
+           
+            <!-- Sağ taraf: Açıklayıcı yazılar -->
+            <!--<div class="col-md-6 d-flex flex-column justify-content-center">
+                <ul class="list-unstyled ms-3">
+                    <li>
+                        <span class="text-success fw-bold">✔ Tamamlanan Proje:</span>
+                        <span>@ViewBag.CompletedCount</span>
+                    </li>
+                    <li class="mt-2">
+                        <span class="text-danger fw-bold">✖ Tamamlanmayan Proje:</span>
+                        <span>@ViewBag.NotCompletedCount</span>
+                    </li>
+                    <li class="mt-2">
+                        <span class="text-primary fw-bold">📊 Toplam Proje:</span>
+                        <span>@ViewBag.TotalExpectedProjects</span>
+                    </li>
+                </ul>
+            </div>-->
+        </div>
+    </div>
+</div>
+
+<!-- Alttaki Doughnut Chart -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Doughnut Chart</h4>
+        <canvas id="doughnutChart1" style="height:300px; width:300px;"></canvas>
+    </div>
+</div>
