@@ -132,25 +132,6 @@
     });
   }
 
-  //Donut
-  var labels = ['safari', 'chrome', 'explorer', 'firefox'];
-  var data = {
-    series: [20, 40, 10, 30]
-  };
-
-  if ($('#ct-chart-donut').length) {
-    new Chartist.Pie('#ct-chart-donut', data, {
-      donut: true,
-      donutWidth: 60,
-      donutSolid: true,
-      startAngle: 270,
-      showLabel: true,
-      labelInterpolationFnc: function(value, index) {
-        var percentage = Math.round(value / data.series.reduce(sum) * 100) + '%';
-        return labels[index] + ' ' + percentage;
-      }
-    });
-  }
 
 
 

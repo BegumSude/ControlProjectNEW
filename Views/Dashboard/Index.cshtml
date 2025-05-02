@@ -9,20 +9,38 @@
 </head>
 <body>
     <!--Kutucuklar-->
+    <div class="row" id="kutucuk">
 
+        @Html.Action("Cards", "Dashboard")
+    </div>
+    <div class="row" id="sutun">
+        <!-- Bar Chart -->
+        <div class="col-md-6 d-flex stretch-card grid-margin">
+
+            @Html.Action("ChartBar", "Dashboard")
+
+        </div>
+
+        <!-- Doughnut Chart -->
+        <div class="col-md-6 -flex stretch-card grid-margin">
+
+            @Html.Action("ChartsD", "Dashboard")
+
+        </div>
+    </div>
 
 
     <div class="row">
-       
-        <!--Öğrencilerin Genel Sıralaması-->
-        <div class="col-7 grid-margin ">
-            @Html.Action("Cards", "Dashboard")
 
+        <div class="col-8 grid-margin ">
+
+
+            <!--Öğrencilerin Genel Sıralaması-->
             @Html.Action("DashboardTable", "Dashboard")
         </div>
-        <!--Öğretmenlerin Başarı Oranları-->
-        <div class="col-5 grid-margin ">
-            @Html.Action("ChartsD", "Dashboard")
+
+        <div class="col-4 grid-margin ">
+            @Html.Action("MiniCards", "Dashboard")
 
         </div>
 
@@ -34,79 +52,4 @@
 </body>
 </html>
 
-
-<!--Doughnut chart js-->
-<script>
-    var ctx = document.getElementById('doughnutChart1').getContext('2d');
-    var doughnutChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Münevver Hoca', 'Murat Hoca', 'Buse Nur Hoca', 'Erhan Hoca', 'Abdullah Hoca', 'Fatih Hoca'],
-            datasets: [{
-                labels: ['Pink', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                data: [15, 20, 10, 25, 20, 10],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(54, 162, 235, 0.5)',
-                    'rgba(255, 206, 86, 0.5)',
-                    'rgba(75, 192, 192, 0.5)',
-                    'rgba(153, 102, 255, 0.5)',
-                    'rgba(255, 159, 64, 0.5)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(54, 162, 235, 0.5)',
-                    'rgba(255, 206, 86, 0.5)',
-                    'rgba(75, 192, 192, 0.5)',
-                    'rgba(153, 102, 255, 0.5)',
-                    'rgba(255, 159, 64, 0.5)'
-                ],
-                borderWidth: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            animation: {
-                animateScale: true,
-                animateRotate: true
-            },
-
-        }
-    });
-
-
-
-
-   document.addEventListener("DOMContentLoaded", function () {
-    const ctx = document.getElementById('projectProgressChart')?.getContext('2d');
-    if (ctx) {
-        new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Tamamlanan', 'Tamamlanmayan'],
-                datasets: [{
-                    data: [@ViewBag.CompletedPercentage, @(100 - ViewBag.CompletedPercentage)],
-                    backgroundColor: ['#4B49AC', '#e4e4e4'],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                cutout: '70%',
-                responsive: false,
-                plugins: {
-                    legend: {
-                        display: false,
-                        labels: {
-                            generateLabels: () => [] // bazı sürümlerde bu da gerekebilir
-                        }
-                    }
-                }
-
-            }
-        });
-    }
-});
-    document.querySelectorAll('.legend, .chart-legend, .custom-legend').forEach(el => el.remove());
-
-</script>
 
