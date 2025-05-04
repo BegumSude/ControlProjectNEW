@@ -1,0 +1,93 @@
+﻿
+
+@model List<IGrouping<string, ControlProject.ViewModels.StudentProjectsViewModel>>
+
+
+<style>
+    .badge-status {
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: 500;
+    }
+
+    .status-baslamadi {
+        background-color: #dc3545; /* kırmızı */
+        color: white;
+    }
+
+    .status-devam {
+        background-color: #ffc107; /* sarı */
+        color: white;
+    }
+
+    .status-tamam {
+        background-color: #28a745; /* yeşil */
+        color: white;
+    }
+</style>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Proje İlerleme Durumları</h4>
+        <p class="card-description">
+            Toplam @ViewBag.studentCount öğrenci
+        </p>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Öğrenci</th>
+                        @foreach (var title in ViewBag.ProjectTitles as List<string>)
+                        {
+                            <th>@title</th>
+                        }
+                        <th>Başarı Oranı</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var studentGroup in Model)
+                    {
+                        var firstStudent = studentGroup.FirstOrDefault();
+                        var successRate = firstStudent != null ? firstStudent.SuccessRate : 0;
+
+                        <tr>
+                            <td>
+                                <strong>@studentGroup.Key</strong>
+                                @if (firstStudent != null)
+                                {
+                                    <a href="@Url.Action("UpdateProjectStatus", "FatihAkbulut", new { studentId = firstStudent.StudentId })">
+                                        <i class="fas fa-edit" style="cursor: pointer; margin-left: 10px;"></i>
+                                    </a>
+
+                                }
+                            </td>
+                            @foreach (var title in ViewBag.ProjectTitles)
+                            {
+                                var studentProject = studentGroup.FirstOrDefault(sp => sp.ProjectTitle == title);
+                                string statusClass = studentProject == null ? "status-baslamadi" :
+                                                    studentProject.Status == "Tamamlandı" ? "status-tamam" :
+                                                    studentProject.Status == "Devam Ediyor" ? "status-devam" : "status-baslamadi";
+                                string statusText = studentProject == null ? "Başlamadı" : studentProject.Status;
+
+                                <td><span class="badge-status @statusClass">@statusText</span></td>
+                            }
+                            <td>
+                                <div class="progress" style="height: 27px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: @(successRate)%"
+                                         aria-valuenow="@successRate" aria-valuemin="0" aria-valuemax="100">
+                                        @successRate%
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

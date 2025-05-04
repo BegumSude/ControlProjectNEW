@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!--Kutucuklar-->
+    <div class="row" id="kutucuk">
+
+        @Html.Action("Cards", "Dashboard")
+    </div>
+    <div class="row" id="sutun">
+        <!-- Bar Chart -->
+        <div class="col-md-6 d-flex stretch-card grid-margin">
+
+            @Html.Action("ChartBar", "Dashboard")
+
+        </div>
+
+        <!-- Doughnut Chart -->
+        <div class="col-md-6 -flex stretch-card grid-margin">
+
+            @Html.Action("ChartsD", "Dashboard")
+
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-8 grid-margin ">
+
+
+            <!--Öğrencilerin Genel Sıralaması-->
+            @Html.Action("DashboardTable", "Dashboard")
+        </div>
+
+        <div class="col-4 grid-margin ">
+            @Html.Action("MiniCards", "Dashboard")
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+</html>
+
+

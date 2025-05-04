@@ -1,0 +1,75 @@
+﻿<div class="col-12">
+    <div class="card shadow-sm" style="height: 200px;">
+        <div class="card-body d-flex flex-column justify-content-center align-items-center text-center h-100">
+
+            <h5 class="card-title">Toplam İlerleme Durumu</h5>
+
+            <!-- Küçük kutular -->
+            <div class="row w-100 mt-2 mb-3">
+
+                <div class="col text-center">
+                    <div class="border rounded p-1 px-7" style="font-size: 0.85rem;">
+                        <small class="text-muted d-block">Toplam Proje</small>
+                        <strong>@ViewBag.TotalExpectedProjects</strong>
+                    </div>
+                </div>
+
+                <div class="col text-center">
+                    <div class="border rounded p-1 px-2" style="font-size: 0.85rem;">
+                        <small class="text-muted d-block">Tamamlanan</small>
+                        <strong>@ViewBag.CompletedCount</strong>
+                    </div>
+                </div>
+
+                <div class="col text-center">
+                    <div class="border rounded p-1 px-2" style="font-size: 0.85rem;">
+                        <small class="text-muted d-block">Tamamlanmayan</small>
+                        <strong>@ViewBag.NotCompletedCount</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="w-100">
+                <div class="progress" style="height: 20px;">
+                    <div class="progress-bar bg-success"
+                         role="progressbar"
+                         style="width:@ViewBag.CompletedPercentage%;"
+                         aria-valuenow="@ViewBag.CompletedPercentage"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+                        @ViewBag.CompletedPercentage%
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="col-12">
+    <div class="card mt-4 shadow-sm">
+        <div class="card-body text-center">
+            <h4 class="card-title  mb-3" style="color:black">Günün Sözü</h4>
+            <blockquote class="blockquote mb-0">
+                <p class="mb-2" style="font-size: 1rem; font-style: italic;">
+                    "@ViewBag.Motivation"
+                </p>
+            </blockquote>
+        </div>
+    </div>
+</div>
+
+<div class="col-12">
+    <div class="card shadow-sm mt-4">
+        <div class="card-body text-center">
+            <h4 class="card-title text-muted " style="color:black">Eğitim Bitimine Kalan Süre</h4>
+            <h3 style="font-weight: bold; color: #4B49AC;">          
+
+                @(new DateTime(2025, 6, 1).Subtract(DateTime.Today).Days) gün
+            </h3>
+            <small class="text-muted">Haydi son düzlüğe, harikasın! 🚀</small>
+        </div>
+    </div>
+</div>

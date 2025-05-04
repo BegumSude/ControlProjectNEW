@@ -1,0 +1,45 @@
+﻿@model ControlProject.ViewModels.ProjectStatusUpdateViewModel
+
+@{
+    ViewBag.Title = "Projeleri Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>@Model.StudentName - Proje Durumlarını Güncelle</h2>
+
+<form action="/MuratYucedag/UpdateProjectStatus" method="post">
+    <input type="hidden" name="StudentId" value="@Model.StudentId" />
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Proje Adı</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Projects.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @Model.Projects[i].ProjectName
+                        <input type="hidden" name="Projects[@i].StudentProjectId" value="@Model.Projects[i].StudentProjectId" />
+                        <input type="hidden" name="Projects[@i].ProjectName" value="@Model.Projects[i].ProjectName" />
+                    </td>
+                    <td>
+                        <select name="Projects[@i].Status" class="form-control">
+                            @foreach (var status in Model.Projects[i].AvailableStatuses)
+                            {
+                                <option value="@status" @(status == Model.Projects[i].Status ? "selected" : "")>
+                                    @status
+                                </option>
+                            }
+                        </select>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>

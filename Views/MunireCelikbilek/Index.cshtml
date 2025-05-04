@@ -1,0 +1,163 @@
+﻿@model ControlProject.ViewModels.ProjectCountsViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Münire Çelikbilek - Öğrenci Projeleri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Ana Sayfa Stil */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .professor-info {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .professor-details {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .professor-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            color: #333;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+            .social-media a:hover {
+                color: #007bff;
+            }
+
+        .project-status {
+            margin: 20px;
+        }
+
+            .project-status table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            .project-status th, .project-status td {
+                padding: 10px;
+                text-align: center;
+                border: 1px solid #ddd;
+            }
+
+            .project-status th {
+                background-color: #007bff;
+                color: #fff;
+            }
+
+            .project-status .completed {
+                background-color: green;
+                color: white;
+            }
+
+            .project-status .in-progress {
+                background-color: yellow;
+            }
+
+            .project-status .not-started {
+                background-color: red;
+                color: white;
+            }
+
+        .chart-container {
+            margin: 20px;
+            text-align: center;
+        }
+
+        h4 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hocanın Bilgileri ve Sosyal Medya -->
+    <div class="professor-info">
+        <div class="professor-details">
+
+            <div class="row">
+
+                @Html.Action("Detail")
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            @Html.Action("StudentTable")
+        </div>
+    </div>
+
+
+
+</body>
+
+
+<script>
+     const completed = @Model.TamamlananProje;
+     const notCompleted = @Model.TamamlanmayanProje;
+    // doughnutChart1 için grafik
+    const ctx1 = document.getElementById('doughnutChart1') ?.getContext('2d');
+
+
+    if (ctx1) {
+        new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: ['Tamamlanmayan', 'Tamamlanan'],
+                datasets: [{
+                    data: [notCompleted, completed],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',  // Tamamlanmayan: pembe
+                        'rgba(54, 162, 235, 0.5)',  // Tamamlanan: mavi
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
+    }
+
+
+
+    // Gereksiz legend elementlerini kaldır
+    document.querySelectorAll('.legend, .chart-legend, .custom-legend').forEach(el => el.remove());
+</script>
+
+
